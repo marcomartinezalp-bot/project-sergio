@@ -17,9 +17,15 @@ body {
 }
 
 .title {
-  margin: 0;
+  margin: 20px 0;
+  padding: 14px 20px;
   text-align: center;
   font-size: 2rem;
+  background: #eff6ff;
+  border: 2px solid #7dd3fc;
+  border-radius: 14px;
+  width: 100%;
+  display: block;
 }
 
 .subtitle {
@@ -158,6 +164,17 @@ nav a:hover {
   border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.form-button.secondary {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.form-button.secondary:hover {
+  background: #007bff;
+  color: white;
 }
 
 .form-button:hover {

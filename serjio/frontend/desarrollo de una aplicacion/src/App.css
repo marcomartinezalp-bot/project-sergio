@@ -182,3 +182,190 @@
     border-right-color: var(--border);
   }
 }
+
+/* Horarios page styles */
+.horarios-image-wrapper {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.horarios-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.upload-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.upload-label {
+  font-weight: 600;
+}
+.upload-controls input[type="file"] {
+  display: none;
+}
+
+.filepicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+.filepicker:hover {
+  filter: brightness(0.98);
+}
+
+.filepicker-icon {
+  font-size: 16px;
+}
+
+.file-name {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.remove-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.no-image {
+  color: var(--text-muted);
+  padding: 18px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+/* Profesores */
+.prof-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.prof-form .form-input {
+  min-width: 180px;
+}
+
+.professors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.professor-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.professor-photo img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.professor-photo .no-photo {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+.professor-info {
+  flex: 1 1 auto;
+}
+
+.attendance-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.attendance-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.attendance-button.asistio {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.attendance-button.falto {
+  background: #ffffff;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.attendance-button.active.asistio {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.attendance-button.active.falto {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.attendance-button:hover {
+  opacity: 0.95;
+}
+
+.prof-name {
+  font-weight: 700;
+}
+
+.prof-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.professor-actions {
+  flex: 0 0 auto;
+}

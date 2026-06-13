@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './App.css'
 import Inicio from './pages/Inicio'
 import Horarios from './pages/Horarios'
 import Profesores from './pages/Profesores'
@@ -16,7 +17,7 @@ const pages = {
 }
 
 function App() {
-  const [activePage, setActivePage] = useState('inicio')
+  const [activePage, setActivePage] = useState('registro')
 
   const renderPage = () => {
     switch (activePage) {
@@ -27,9 +28,9 @@ function App() {
       case 'notificaciones':
         return <Notificaciones />
       case 'login':
-        return <Login />
+        return <Login setActivePage={setActivePage} />
       case 'registro':
-        return <Register />
+        return <Register setActivePage={setActivePage} />
       default:
         return <Inicio />
     }

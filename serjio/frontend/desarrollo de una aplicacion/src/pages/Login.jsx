@@ -7,7 +7,19 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setMessage(`Has iniciado sesión con ${email}`)
+    setMessage('')
+    // Enviar credenciales al backend
+    fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ correo: email, password })
+    })
+      .then(async (res) => {
+        const data = await res.json()
+        if (!res.ok) throw new Error(data.message || 'Error de autenticación')
+        setMessage(`Has iniciado sesión como ${data.usuario.nombre}`)
+      })
+      .catch((err) => setMessage(err.message))
   }
 
   return (

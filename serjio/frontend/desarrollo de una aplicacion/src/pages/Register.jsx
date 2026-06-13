@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Register() {
+function Register({ setActivePage }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -11,7 +11,7 @@ function Register() {
     setMessage('Registrando...')
 
     try {
-      const response = await fetch('http://localhost:3000/api/usuarios', {
+      const response = await fetch('http://localhost:5000/api/usuarios', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -19,18 +19,18 @@ function Register() {
         body: JSON.stringify({ nombre: name, correo: email, password }),
       })
 
+      const data = await response.json()
+      
       if (!response.ok) {
-        const data = await response.json()
         throw new Error(data.message || 'Error al registrar')
       }
 
-      const data = await response.json()
-      setMessage(`Usuario ${data.nombre} registrado con ${data.correo}`)
+      setMessage(`✓ ${data.message}`)
       setName('')
       setEmail('')
       setPassword('')
     } catch (error) {
-      setMessage(error.message)
+      setMessage(`✗ ${error.message}`)
     }
   }
 
@@ -73,6 +73,13 @@ function Register() {
           Crear cuenta
         </button>
       </form>
+      <button
+        type="button"
+        className="form-button secondary"
+        onClick={() => setActivePage('login')}
+      >
+        Ya tengo cuenta, iniciar sesión
+      </button>
       {message && <p className="page-text">{message}</p>}
     </div>
   )
